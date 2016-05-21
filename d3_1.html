@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Base Ball Players' Statistics</title>
+<style>
+body {
+	background-color: #FFF;
+	font-family: verdana;
+	background-color: #EFEFEF;
+}
+
+.center {
+	margin: auto;
+	width: 1000px;
+	height: 80%;
+	padding: 10px;
+}
+
+.button {
+	background: #FFF;
+	border-radius: 7px;
+	box-shadow: 0 5px 1px #888888;
+	padding: 5px 5px 5px 5px;
+	color: green;
+}
+
+.legend {
+	float: right;
+	font-size: 10px;
+	display: none; width : 200px; height : 80px;
+	color: #A0A0A0;
+	width: 200px;
+	height: 80px;
+}
+
+.xAxis {
+	margin-right: 100px;
+}
+
+.cube {
+	width: 25px;
+	height: 5px;
+	background-color: steelblue;
+	border-radius: 5px;
+}
+</style>
+</head>
+<body onload="makeBarChart()">
+	<div style="text-align: center;">
+		<h1 style="color: #A0A0A0;">Base Ball Players' Statistics</h1>
+	</div>
+	<div>
+		<div style="width: 50px; float: left;">
+			<table>
+				<tr>
+					<td><img id="barChartButton" src="bar_chart2.png"
+						width="100px" height="64px" name='Bar'
+						style="float: left; margin: 0px 0px 10px 42px;" class="button"
+						onclick="makeBarChart()" /></td>
+				</tr>
+				<tr>
+					<td><img id="pieChartButton" src="pie_chart1.png"
+						width="100px" height="64px" name='Pie'
+						style="float: left; margin: 0px 0px 10px 42px;" class="button"
+						onclick="makePieChart()" /></td>
+				</tr>
+				<tr>
+					<td><img id="forceLayoutButton" src="force_chart2.png"
+						width="100px" height="64px" name="Force"
+						style="display: block; float: left; margin: 0px 0px 10px 42px;"
+						class="button" onclick="makeForceChart()" /></td>
+				</tr>
+				<tr>
+					<td><input id="extraCreditButton" type="button" width="100px"
+						height="64px" value="ExtraCredit-Bins" class='button'
+						style="display: block; margin: 0px 0px 10px 42px; padding-top: 28px; padding-bottom: 28px;"
+						onclick="doExtraCredit()" /></td>
+				</tr>
+			</table>
+		</div>
+		<div id="chart" class="center"
+			style="text-align: center; box-shadow: 10px 10px 5px #888888; background-color: #FFF;">
+			<div id="legend" class="legend"></div>
+		</div>
+	</div>
+	<div id="xAxisText"
+		style="text-align: center; color: #5090A0; padding-top: 30px; font-size: 20px;"></div>
+	<script src="d3.min.js"></script>
+	<script src="bar.js"></script>
+	<script src="jquery.min.js"></script>
+</body>
+</html>
